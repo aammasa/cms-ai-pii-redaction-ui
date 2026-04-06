@@ -1,0 +1,46 @@
+.overlay {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(23, 28, 30, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.spinnerWrap {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+/* Outer ring – Trimble Blue */
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--border-hi);
+  border-top-color: var(--blue-hi);
+  border-right-color: rgba(1, 154, 235, 0.4);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+/* Inner ring – Trimble Yellow */
+.spinnerInner {
+  position: absolute;
+  inset: 8px;
+  border: 1.5px solid transparent;
+  border-bottom-color: var(--yellow);
+  border-radius: 50%;
+  animation: spin 0.5s linear infinite reverse;
+}
+
+.text {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}

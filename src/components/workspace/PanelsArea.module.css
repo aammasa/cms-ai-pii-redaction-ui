@@ -1,0 +1,97 @@
+.panelsArea {
+  grid-column: 2 / 4;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.headers { display: flex; flex-shrink: 0; }
+
+.headers .panelHeader { flex: 1; }
+.headers .panelHeader:first-child { border-right: 1px solid var(--border); }
+
+.panelHeader {
+  padding: 10px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+}
+
+.panelLabel {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.copyBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  color: var(--muted);
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 3px 10px;
+  border-radius: var(--radius);
+  transition: all 0.12s;
+  font-family: var(--sans);
+}
+
+.copyBtn:hover {
+  color: var(--blue-hi);
+  background: var(--accent-soft);
+  border-color: rgba(1, 154, 235, 0.2);
+}
+
+.scroll {
+  display: flex;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.panelBody {
+  padding: 24px;
+  overflow-y: visible;
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.85;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #a3a6b1;   /* Trimble Gray 3 */
+  border-right: 1px solid var(--border);
+}
+
+.panelBody:last-child { border-right: none; }
+
+/* ── PII in original – Trimble Red highlight ─────────────── */
+:global(.pii-highlight) {
+  background: rgba(218, 33, 44, 0.1);
+  color: #e86363;   /* Trimble Red Light */
+  border-radius: 3px;
+  padding: 1px 3px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(218, 33, 44, 0.3);
+}
+
+/* ── Redacted tag – Trimble Blue badge ───────────────────── */
+:global(.pii-tag) {
+  display: inline-flex;
+  align-items: center;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid rgba(1, 154, 235, 0.25);
+  border-radius: 3px;
+  padding: 0 6px;
+  font-size: 10.5px;
+  font-weight: 500;
+  vertical-align: middle;
+  letter-spacing: 0.03em;
+}

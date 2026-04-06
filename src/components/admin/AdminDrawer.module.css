@@ -1,0 +1,120 @@
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(10, 12, 14, 0.72);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.overlay.open { display: block; }
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -700px;
+  bottom: 0;
+  width: 700px;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 201;
+  overflow: hidden;
+  box-shadow: -16px 0 48px rgba(0,0,0,0.5);
+}
+
+.drawer.open { right: 0; }
+
+/* Trimble Blue left-accent bar on header */
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  border-left: 3px solid var(--blue);
+  background: rgba(0, 99, 163, 0.04);
+}
+
+.drawerTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.drawerSub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.closeBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.12s;
+}
+
+.closeBtn:hover {
+  border-color: var(--border-hi);
+  color: var(--text);
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  padding: 0 28px;
+  background: var(--bg);
+}
+
+.tab {
+  padding: 10px 16px;
+  font-size: 11px;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.12s, border-color 0.12s;
+  white-space: nowrap;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: var(--sans);
+}
+
+/* Active tab uses Trimble Yellow underline */
+.tab.tabActive {
+  color: var(--yellow);
+  border-bottom-color: var(--yellow);
+  font-weight: 500;
+}
+
+.tab:hover:not(.tabActive) { color: var(--text-2); }
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.loadError {
+  padding: 28px;
+  color: var(--danger);
+  font-size: 12px;
+}

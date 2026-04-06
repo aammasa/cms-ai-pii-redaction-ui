@@ -1,0 +1,107 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Trimble Modus Design System – Dark Theme ──────────────── */
+:root {
+  /* Backgrounds */
+  --bg:           #171c1e;   /* Trimble Gray 10 – header/footer dark */
+  --surface:      #252a2e;   /* Trimble Gray – main surface */
+  --surface-2:    #353a40;   /* Gray 9 – elevated surfaces */
+  --surface-3:    #464b52;   /* Gray 8 – cards / inputs */
+
+  /* Borders */
+  --border:       #353a40;   /* Gray 9 */
+  --border-hi:    #464b52;   /* Gray 8 */
+
+  /* Typography */
+  --text:         #f1f1f6;   /* Gray Light – primary text on dark */
+  --text-2:       #cbcdd6;   /* Gray 0 */
+  --muted:        #7d808d;   /* Gray 5 – placeholder / secondary */
+
+  /* Trimble Brand Blues — exact Modus Design System values */
+  --blue-dark:    #0e416c;   /* Blue Dark */
+  --blue:         #0063a3;   /* Trimble Blue — primary brand color */
+  --blue-mid:     #004f83;   /* Trimble Blue Dark */
+  --blue-light:   #217cbb;   /* Blue Light */
+  --blue-hi:      #019aeb;   /* Highlight Blue — interactive/hover */
+  --blue-pale:    #dcedf9;   /* Blue Pale */
+
+  /* Trimble Yellow — primary CTA color */
+  --yellow:       #fbad26;   /* Trimble Yellow */
+  --yellow-dark:  #e49325;   /* Yellow Dark */
+  --yellow-soft:  rgba(251, 173, 38, 0.12);
+
+  /* Accent aliases */
+  --accent:       #019aeb;   /* Highlight Blue */
+  --accent-d:     #0063a3;   /* Trimble Blue */
+  --accent-glow:  rgba(1, 154, 235, 0.18);
+  --accent-soft:  rgba(1, 154, 235, 0.08);
+
+  /* Semantic */
+  --danger:       #da212c;   /* Trimble Red */
+  --danger-soft:  rgba(218, 33, 44, 0.1);
+  --success:      #1e8a44;   /* Trimble Green */
+
+  /* Tags / badges */
+  --tag-bg:       rgba(1, 154, 235, 0.1);
+  --tag-text:     #7cc8f5;
+
+  /* Fonts */
+  --mono:         'DM Mono', monospace;
+  --sans:         'DM Sans', sans-serif;
+
+  /* Radii */
+  --radius:       6px;       /* Trimble Modus uses tighter radii */
+  --radius-lg:    10px;
+  --radius-xl:    14px;
+}
+
+html {
+  height: 100%;
+  background: var(--bg);
+  /* Subtle horizontal-line grid like Trimble's dashboard UIs */
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,0.012) 0px,
+    rgba(255,255,255,0.012) 1px,
+    transparent 1px,
+    transparent 28px
+  );
+}
+
+body {
+  height: 100%;
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(0, 99, 163, 0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 35% at 95% 100%, rgba(1, 154, 235, 0.05) 0%, transparent 60%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { height: 100%; }
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ── Animations ────────────────────────────────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(30, 138, 68, 0.5); }
+  60%       { box-shadow: 0 0 0 5px transparent; }
+}

@@ -1,0 +1,159 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 52px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  position: relative;
+  background: #171c1e;
+}
+
+/* Trimble Blue 3px accent line — matches Trimble's header signature */
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--blue);
+  pointer-events: none;
+}
+
+/* ── Logo area ─────────────────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* The official Trimble mark sits in a blue circle, matching trimble.com */
+.logoMark {
+  width: 36px;
+  height: 36px;
+  background: var(--blue);          /* Trimble Blue #0063a3 */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(0, 99, 163, 0.35);
+}
+
+/* "TRIMBLE" — Franklin Gothic Condensed style via system font stack */
+.logoWord {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f1f1f6;
+  font-family: 'Arial Narrow', 'Franklin Gothic Medium', 'Arial', sans-serif;
+  font-stretch: condensed;
+  line-height: 1;
+}
+
+.logoDivider {
+  color: var(--border-hi);
+  font-size: 16px;
+  font-weight: 200;
+  margin: 0 2px;
+  opacity: 0.4;
+  line-height: 1;
+}
+
+.logoProduct {
+  color: var(--text-2);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* ── Right side ────────────────────────────────────────────── */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.statusPill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border-hi);
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+
+.statusDot.online {
+  background: #1e8a44;
+  box-shadow: 0 0 5px rgba(30, 138, 68, 0.6);
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
+
+.statusLabel {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.statusLabel.online {
+  color: #4ea646;
+}
+
+.newFileBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  padding: 5px 14px;
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--sans);
+}
+
+.newFileBtn:hover {
+  border-color: var(--blue-hi);
+  color: var(--blue-hi);
+  background: var(--accent-soft);
+}
+
+.adminBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--sans);
+}
+
+.adminBtn:hover {
+  border-color: var(--border-hi);
+  color: var(--text-2);
+  background: var(--surface-2);
+}
+
+.adminBtn svg { flex-shrink: 0; }

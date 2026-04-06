@@ -1,0 +1,8 @@
+.workspace {
+  display: grid;
+  grid-template-columns: 270px 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  flex: 1;
+  overflow: hidden;
+  animation: fadeIn 0.35s cubic-bezier(0.22,1,0.36,1);
+}

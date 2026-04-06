@@ -1,0 +1,220 @@
+.sidebar {
+  grid-row: 1 / 3;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.sidebarTop {
+  padding: 16px 20px 14px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.sectionHeading {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Trimble Blue file icon */
+.fileIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, var(--blue) 0%, var(--blue-hi) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 9px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 8px rgba(0, 99, 163, 0.35);
+}
+
+.fileName {
+  font-size: 12px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text);
+}
+
+.fileType {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
+.fileLang {
+  font-size: 10px;
+  color: var(--blue-hi);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.section {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.sectionLabel {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.entityList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.entityRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.entityName { color: var(--text-2); }
+
+/* Trimble Yellow accent on badge counter */
+.entityCount {
+  font-family: var(--mono);
+  font-size: 10px;
+  background: rgba(251, 173, 38, 0.12);
+  color: var(--yellow);
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px solid rgba(251, 173, 38, 0.2);
+  font-weight: 500;
+}
+
+.noResults {
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.controls {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.ctrlLabel {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+  max-height: 220px;
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  outline: none;
+  transition: background 0.12s;
+}
+
+.toggleRow:hover { background: var(--surface-2); }
+
+.toggleLabel {
+  font-size: 11.5px;
+  cursor: pointer;
+  pointer-events: none;
+  color: var(--text-2);
+}
+
+.toggleSw {
+  width: 30px;
+  height: 17px;
+  border-radius: 9px;
+  background: var(--border-hi);
+  position: relative;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+/* Trimble Blue toggle on */
+.toggleSw.on {
+  background: var(--blue);
+  box-shadow: 0 0 6px rgba(0, 99, 163, 0.4);
+}
+
+.toggleSw::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  top: 2.5px;
+  left: 2.5px;
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.toggleSw.on::after { transform: translateX(13px); }
+
+/* Trimble Yellow CTA button */
+.reprocessBtn {
+  margin-top: 4px;
+  width: 100%;
+  padding: 9px;
+  font-size: 12px;
+  font-family: var(--sans);
+  border: none;
+  border-radius: var(--radius);
+  background: var(--yellow);
+  color: #1a1400;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 8px rgba(251, 173, 38, 0.25);
+}
+
+.reprocessBtn:hover {
+  background: var(--yellow-dark);
+  box-shadow: 0 4px 14px rgba(251, 173, 38, 0.35);
+  transform: translateY(-1px);
+}
+
+.reprocessBtn:active { transform: translateY(0); }
