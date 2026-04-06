@@ -30,8 +30,8 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
 
       # Add a minimal express server so Azure Web App (Linux/Node) can serve
-      # the static SPA with proper fallback routing for React Router.
-      - name: Add static server to dist
+      # the static SPA with proper fallback routing.
+      - name: Add static server to dist and install its dependencies
         run: |
           cat > dist/server.js << 'EOF'
           const express = require('express');
@@ -40,7 +40,7 @@ jobs:
           const port = process.env.PORT || 8080;
           app.use(express.static(path.join(__dirname)));
           app.get('*', (_req, res) => res.sendFile(path.join(__dirname, 'index.html')));
-          app.listen(port, () => console.log(`Serving on port ${port}`));
+          app.listen(port, () => console.log(`Server running on port ${port}`));
           EOF
 
           cat > dist/package.json << 'EOF'
@@ -52,6 +52,10 @@ jobs:
             "dependencies": { "express": "^4.18.2" }
           }
           EOF
+
+          # Install express inside dist/ so the package is fully self-contained.
+          # Azure will just run "node server.js" without needing a separate npm install.
+          cd dist && npm install --omit=dev
 
       - name: Upload dist artifact
         uses: actions/upload-artifact@v4
