@@ -81,7 +81,7 @@ export function ChatBot() {
         aria-label="Open AI assistant"
         title="Ask AI assistant"
       >
-        <Icon name={open ? 'close' : 'trimble-logo'} size={22} />
+        <Icon name={open ? 'close' : 'magic-wand'} size={20} />
       </button>
 
       {/* ── Chat panel ───────────────────────────────────── */}
@@ -91,7 +91,7 @@ export function ChatBot() {
         <div className={styles.header}>
           <div className={styles.headerLeft}>
             <div className={styles.headerIcon}>
-              <Icon name="ai-stars" size={16} />
+              <Icon name="person-account" size={18} />
             </div>
             <div>
               <div className={styles.headerTitle}>PII Assistant</div>
@@ -115,7 +115,7 @@ export function ChatBot() {
           {history.length === 0 && !loading && (
             <div className={styles.empty}>
               <div className={styles.emptyIcon}>
-                <Icon name="ai-stars" size={28} />
+                <Icon name="person-account" size={28} />
               </div>
               <p className={styles.emptyTitle}>How can I help?</p>
               <p className={styles.emptySub}>
@@ -135,7 +135,7 @@ export function ChatBot() {
             <div key={i} className={`${styles.msg} ${msg.role === 'user' ? styles.msgUser : styles.msgAssistant}`}>
               {msg.role === 'assistant' && (
                 <div className={styles.msgAvatar}>
-                  <Icon name="ai-stars" size={13} />
+                  <Icon name="person-account" size={14} />
                 </div>
               )}
               <div className={styles.msgBubble}>
