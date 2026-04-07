@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { UploadZone } from '@/components/upload/UploadZone';
 import { Workspace } from '@/components/workspace/Workspace';
 import { AdminDrawer } from '@/components/admin/AdminDrawer';
+import { ChatBot } from '@/components/chat/ChatBot';
 import { Loader } from '@/components/ui/Loader';
 import styles from './App.module.css';
 
@@ -26,6 +27,7 @@ export function App() {
       </main>
 
       <AdminDrawer open={adminOpen} onClose={() => setAdminOpen(false)} />
+      <ChatBot />
       <Loader />
     </div>
   );

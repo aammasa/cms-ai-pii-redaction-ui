@@ -129,3 +129,29 @@ export async function testPattern(patterns: string[], sampleText: string): Promi
   });
   return parseJson<PatternTestResponse>(res);
 }
+
+// ── Chat / AI Bot ──────────────────────────────────────────────────────────
+
+export interface ChatMessage {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
+export interface ChatRequest {
+  message: string;
+  history: ChatMessage[];
+  document_context?: string;
+}
+
+export interface ChatResponse {
+  reply: string;
+}
+
+export async function sendChatMessage(payload: ChatRequest): Promise<ChatResponse> {
+  const res = await fetch(`${api}/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  return parseJson<ChatResponse>(res);
+}
